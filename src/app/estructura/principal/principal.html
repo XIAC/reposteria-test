@@ -1,0 +1,15 @@
+<div class="min-vh-100 ">
+    <!-- aqui va el logo el tiutlo  -->
+    <app-encabezado></app-encabezado>
+    <div class="container flex-grow-1">
+        <div class="row">
+            <aside class="col-4">
+                <app-menu-navegacion></app-menu-navegacion>
+            </aside>
+            <main class="col-8">
+                <router-outlet />
+            </main>
+        </div>
+    </div>
+    <app-pie-pagina></app-pie-pagina>
+</div>
