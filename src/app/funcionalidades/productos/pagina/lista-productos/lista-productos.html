@@ -1,9 +1,58 @@
 <h1>Productos</h1>
-<!-- <section class="card">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Catalogo de reposteria</h5>
-    <p class="card-text">Aqui debe mostrar los productos.</p>
+<form #form="ngForm" (ngSubmit)="guardarProducto(form)" class="card card-body mb-4">
+  <h2>{{ editar === null ? 'Agregar producto' : 'Editar producto'  }}</h2>
+  <div>
+    <label for="nombre" class="form-label">Nombre</label>
+    <input class="form-control " 
+            [(ngModel)]="datos.nombre"
+            placeholder="Ingrese nombre del producto" 
+            name="nombre" required maxlength="100" />
   </div>
-</section> -->
-<app-producto-individual></app-producto-individual>
+  <div>
+    <label for="categoria" class="form-label">Categoria</label>
+    <input class="form-control " 
+            [(ngModel)]="datos.categoria"
+            placeholder="Ingrese Categoria" 
+            name="categoria" required maxlength="80"/>
+  </div>
+  <div>
+    <label for="precio" class="form-label">Precio</label>
+    <input class="form-control " 
+            [(ngModel)]="datos.precio"
+            type="number"
+            min="0.01"
+            placeholder="Ingrese precio" 
+            name="precio" required/>
+  </div>
+  <div>
+    <label for="Descripcion" class="form-label">Descripcion</label>
+    <textarea class="form-control form-control-lg" 
+      [(ngModel)]="datos.descripcion"      
+      name="Descripcion" ></textarea>
+  </div>
+
+  <div class="mt-5">
+    <button class="btn btn-primary" [disabled]="form.invalid" >Guardar</button> 
+    <!-- <button class="btn btn-primary" (click)="guardarProducto()">Guardar</button> -->
+  </div>
+</form>
+<div class="alert theme-accent" role="alert">
+  <p>{{ mensaje() }}</p>
+</div>
+<h2>Catalogo</h2>
+<div class="input-group mb-3">
+  <input [(ngModel)]="busqueda"  
+        type="text" class="form-control" 
+        placeholder="Ingrese nombre a buscar" >
+  <button class="btn-outline theme-secondary input-group-btn" type="button" id="button-addon2">Buscar</button>
+</div>
+<div>
+  <!-- <item-producto 
+    [producto] = ""
+    (editar)="editarProducto()"
+    (eliminar)="eliminarProducto()"
+    >
+
+  </item-producto> -->
+
+</div>

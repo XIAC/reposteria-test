@@ -1,12 +1,15 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Producto } from '../../models/producto';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
-  imports: [],
-  selector: 'app-producto-individual',
+  imports: [ DecimalPipe],
+  selector: 'item-producto',
   styleUrl: './producto-individual.css',
   templateUrl: './producto-individual.html',
 })
 export class ProductoIndividual {
-  // producto = input.required<Producto>();
+    producto = input.required<Producto>();
+    editar = output<Producto>();
+    eliminar = output<Producto>();
 }

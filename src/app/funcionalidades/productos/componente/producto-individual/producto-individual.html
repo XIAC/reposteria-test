@@ -1,16 +1,14 @@
-<!-- <div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"> {{ producto().categoria }} </h5>
     <h6 class="card-text">{{ producto().nombre }}</h6>
-    <p>Precio: {{ producto().precio }}</p>
+    <p>Precio: {{ producto().precio | number:'1.2-2' }}</p>
     <small>{{ producto().descripcion }}</small>
-  </div>
-</div> -->
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"> Torta</h5>
-    <h6 class="card-text"> Torta 3 lecehs </h6>
-    <p>Precio: 20.00 bs</p>
-    <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit vitae odio nulla deserunt nihil ipsum necessitatibus nostrum, quasi similique quidem inventore consectetur, tenetur mollitia eius. Iusto veritatis nisi deserunt alias.</small>
+    <button>
+        Editar
+    </button>
+    <button>
+      Eliminar
+    </button>
   </div>
 </div>
